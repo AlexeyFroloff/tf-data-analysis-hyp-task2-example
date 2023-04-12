@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
+chat_id = 423200009 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool:
     stat, p_value = stats.ks_2samp(x, y, alternative='two-sided')
