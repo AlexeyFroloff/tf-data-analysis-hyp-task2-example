@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
-from scipy.stats import anderson_ksamp
+from hyppo.ksample import MMD
 
 chat_id = 423200009 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool:
-    p_value = anderson_ksamp([x, y]).pvalue 
+    p_value = MMD(compute_kernel="laplacian", gamma=1).test(x, y)[1]
     alpha = 0.03
     return p_value < alpha
     
